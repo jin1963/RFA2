@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>KJC Referral & Staking</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>💎 KJC Referral & Auto-Staking</h1>
+
+  <button onclick="connectWallet()">🔗 เชื่อมต่อกระเป๋า</button>
+  <p id="walletAddress">❌ ยังไม่เชื่อมต่อ</p>
+
+  <div id="refSection" style="display:none;">
+    <h3>🔗 ลิงก์แนะนำของคุณ</h3>
+    <input id="refLink" readonly style="width:80%;" />
+    <button onclick="copyRefLink()">📋 คัดลอกลิงก์</button>
+
+    <h3>📩 สมัคร Referrer</h3>
+    <input type="text" id="refInput" placeholder="Referrer Address" style="width:300px;" />
+    <button onclick="registerReferrer()">📌 สมัคร Referrer</button>
+
+    <h3>💰 ซื้อและ Stake KJC</h3>
+    <input type="number" id="usdtAmount" placeholder="จำนวน USDT" step="0.01" />
+    <input type="number" id="amountOutMin" placeholder="จำนวน KJC ขั้นต่ำ" step="0.01" />
+    <button onclick="buyAndStake()">🛒 ซื้อและ Stake</button>
+
+    <h3>🎁 เคลมรางวัล</h3>
+    <button onclick="claimReferral()">✨ เคลมรางวัลแนะนำ</button>
+    <button onclick="claimStaking()">💎 เคลมรางวัล Stake</button>
+
+    <h3>📊 ข้อมูลของคุณ</h3>
+    <p id="yourStake">ยอด Stake: -</p>
+    <p id="yourReward">รางวัลแนะนำ: -</p>
+
+    <p id="status"></p>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="abi.js"></script>
+  <script src="usdtAbi.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
